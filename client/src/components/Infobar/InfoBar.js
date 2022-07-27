@@ -1,6 +1,11 @@
-import React, {useState, useEffect} from "react"; 
+import React from "react"; 
 
-const  InfoBar = ()=> {
+const  InfoBar = ({room})=> {
+    <div className="infoBar">
+    <div className="leftInnerContainer">
+    <h3>{room}</h3>
+    </div>
+    </div>
 
 }
 
