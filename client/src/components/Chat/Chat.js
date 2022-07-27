@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"; 
 import io from "socket.io-client"; 
+import queryString from 'query-string';
 import TextContainer from "../TextContainer/TextContainer";
 import Messages from "../Message/Messages";
 import InfoBar from "../InfoBar/InfoBar";
@@ -7,8 +8,10 @@ import Input from "../Input/Input";
 
 
 let socket; 
+const ENDPOINT = 'localhost:3002/';
 
-const Chat = () =>{
+
+const Chat = ({location}) =>{
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
   const [users, setUsers] = useState('');
@@ -52,7 +55,9 @@ const Chat = () =>{
     return (
         <div className="outerContainer">
           <div className="container">
-              <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+          <InfoBar room={room}/>
+          <Messages messages={messages}  name={name}/>
+          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
           </div>
         </div>
       );
