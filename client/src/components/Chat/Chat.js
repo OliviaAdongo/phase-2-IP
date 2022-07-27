@@ -9,7 +9,7 @@ import Input from "../Input/Input";
 let socket; 
 
 const Chat = () =>{
-    const [name, setName] = useState('');
+  const [name, setName] = useState('');
   const [room, setRoom] = useState('');
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
